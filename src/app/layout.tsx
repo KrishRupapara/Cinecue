@@ -3,9 +3,10 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
-  title: "Cine Cue",
+  title: "Cinécue",
   description: "The best movies list for cinephiles",
 };
 
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={cn(GeistSans.className, "relative h-full antialiased")}>
-        <main className="relative flex flex-col min-h-screen overflow-x-hidden bg-bg_primary">
-          <Navbar />
-          <div className="flex-1 flex-grow">{children}</div>
+        <main className="relative flex flex-col min-h-screen overflow-x-hidden bg-bg_primary text-white">
+          <Providers>
+            <Navbar />
+            <div className="flex-1 flex-grow">{children}</div>
+          </Providers>
         </main>
       </body>
     </html>
